@@ -4,10 +4,8 @@ import os
 from collections import Counter
 from collections import defaultdict
 from typing import Any
-from typing import List
 
 import pandas as pd
-from pandas.io.formats.style import Styler
 
 URL_ALIAS_MAP = {
     "https://www.allrecipes.com/": "Allrecipes",
@@ -39,7 +37,7 @@ def find_and_read_json_files(test_results_dir: str, target_directory_name: str) 
                 if file.endswith('.json'):
                     file_path = os.path.join(root, file)
                     # Read the JSON file and append its contents to the result_data list
-                    with open(file_path, 'r') as json_file:
+                    with open(file_path) as json_file:
                         print(f"Reading file: {file_path}")
                         try:
                             data = json.load(json_file)
@@ -77,7 +75,7 @@ def calculate_percentages(score_counter: Counter) -> dict[str, float]:
     score_percentages = {score: (count / total_count) * 100 for score, count in score_counter.items()}
     return score_percentages, total_count
 
-def adjust_scores(data: list[dict[str, Any]], task_ids_to_flip: List[int]):
+def adjust_scores(data: list[dict[str, Any]], task_ids_to_flip: list[int]):
     for entry in data:
         if entry.get('task_id') in task_ids_to_flip:
             if entry.get('score') == 1.0:

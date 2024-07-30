@@ -2,10 +2,6 @@ import asyncio
 import json
 import os
 import time
-from test.evaluators import evaluator_router
-from test.test_utils import get_formatted_current_timestamp
-from test.test_utils import load_config
-from test.test_utils import task_config_validator
 from typing import Any
 
 import ae.core.playwright_manager as browserManager
@@ -19,6 +15,11 @@ from autogen.agentchat.chat import ChatResult  # type: ignore
 from playwright.async_api import Page
 from tabulate import tabulate
 from termcolor import colored
+
+from test.evaluators import evaluator_router
+from test.test_utils import get_formatted_current_timestamp
+from test.test_utils import load_config
+from test.test_utils import task_config_validator
 
 nltk.download('punkt') # type: ignore
 

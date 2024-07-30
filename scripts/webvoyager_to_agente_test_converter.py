@@ -23,11 +23,11 @@ def get_reference_answer(domain:str, id:int, reference_answer_data:Any) -> Any |
     return None
 
 # Load webvoyager_data.jsonl
-with open('webvoyager_data.jsonl', 'r') as f:
+with open('webvoyager_data.jsonl') as f:
     webvoyager_data = [json.loads(line) for line in f]
 
 # Load reference_answer.json
-with open('webvoyager_reference_answer.json', 'r') as f:
+with open('webvoyager_reference_answer.json') as f:
     reference_answer_data = json.load(f)
 
 

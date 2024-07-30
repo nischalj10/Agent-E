@@ -42,7 +42,6 @@ run = "main.py"
 src = ["ae"]
 fix = false
 show-fixes = true
-show-source = true
 line-length = 250
 
 [tool.ruff.lint]

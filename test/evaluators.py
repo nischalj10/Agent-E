@@ -4,17 +4,18 @@ import html
 import time
 import urllib
 import urllib.parse
-from test.test_utils import clean_answer
-from test.test_utils import evaluate_exact_match
-from test.test_utils import evaluate_fuzzy_match
-from test.test_utils import evaluate_must_include
-from test.test_utils import evaluate_ua_match
 from typing import Any
 
 from ae.utils.logger import logger
 from playwright.sync_api import CDPSession
 from playwright.sync_api import Page
 from termcolor import colored
+
+from test.test_utils import clean_answer
+from test.test_utils import evaluate_exact_match
+from test.test_utils import evaluate_fuzzy_match
+from test.test_utils import evaluate_must_include
+from test.test_utils import evaluate_ua_match
 
 
 class Evaluator:
